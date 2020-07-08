@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutterui/constants/colors.dart';
 import 'package:flutterui/constants/fonts.dart';
 
-class WeightAge extends StatelessWidget{
-  final text;
-  final number;
+class WeightAge extends StatefulWidget {
+  String text;
+  int number =0;
+  WeightAge({Key key , this.text, this.number}):super(key: key);
+  @override
+  _WeightAgeState createState() => _WeightAgeState();
+}
 
-   WeightAge({this.text, this.number});
-
-
+class _WeightAgeState extends State<WeightAge> {
+  int num=0;
   @override
   Widget build(BuildContext context) {
+
     final height=MediaQuery.of(context).size.height;
     final width=MediaQuery.of(context).size.width;
     // TODO: implement build
@@ -26,19 +30,27 @@ class WeightAge extends StatelessWidget{
           children: <Widget>[
             Padding(
               padding:EdgeInsets.only(bottom:8.0),
-              child: Text(text,style: fontsSize),
+              child: Text(widget.text,style: fontsSize),
             ),
-            Text(number,style: TextStyle(fontSize: 36,color:iconColor),),
+            Text(num.toString(),style: TextStyle(fontSize: 36,color:iconColor),),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                CircleAvatar(child: Icon(Icons.remove,size: 50,),
+                FloatingActionButton(child: (Icon(Icons.remove,size: 40,color: iconColor,)),
                   backgroundColor:circleAvator,
-                  radius: 25,
+                  onPressed: (){
+                    setState(() {
+                      decrementAgeWeight();
+                    });
+                  },
                 ),
-                CircleAvatar(child: Icon(Icons.add,size: 50,),
+                FloatingActionButton(child: Icon(Icons.add,size: 40,color: iconColor,),
                   backgroundColor:circleAvator,
-                  radius: 25,
+                  onPressed: (){
+                    setState(() {
+                      incrementAgeWeight();
+                    });
+                  },
                 ),
               ],
             )
@@ -46,5 +58,11 @@ class WeightAge extends StatelessWidget{
         ),
       ),
     );
+  }
+  int incrementAgeWeight(){
+      num++;
+  }
+  int decrementAgeWeight(){
+    num--;
   }
 }
