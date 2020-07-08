@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterui/ui/main_ui.dart';
+import 'package:flutterui/ui/calculator_screen.dart';
 
 void main() {
   runApp(BMICalculator());
@@ -8,12 +8,9 @@ void main() {
 class BMICalculator extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-      ),
-      home: MainUi(),
+      home: CalculatorScreen(),
     );
   }
 }
