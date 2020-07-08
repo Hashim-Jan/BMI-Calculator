@@ -3,7 +3,7 @@ import 'package:flutterui/constants/fonts.dart';
 import 'package:flutterui/ui/custom_widgets/gender_weight_age.dart';
 import 'package:flutterui/ui/custom_widgets/gender_widget.dart';
 import 'package:flutterui/ui/gender_height.dart';
-import 'package:flutterui/ui/result_screen.dart';
+import 'file:///F:/Flutter_App/flutter_ui/lib/screens/result_screen.dart';
 
 class CalculatorScreen extends StatelessWidget{
   final int genderWeight,genderAge;
@@ -30,8 +30,8 @@ class CalculatorScreen extends StatelessWidget{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                WeightAge(text: "Weight",number:genderWeight,),
-                WeightAge(text: "Age", number: genderAge,)
+                GenderWeightAge(text: "Weight",number:genderWeight,),
+                GenderWeightAge(text: "Age", number: genderAge,)
             ],
           ),
             Container(
@@ -40,7 +40,7 @@ class CalculatorScreen extends StatelessWidget{
                   color: Colors.red,
                   onPressed: (){
                     Navigator.push(context, MaterialPageRoute(
-                        builder: (context)=>GenderResult(),));
+                        builder: (context)=>ResultScreen(),));
                   },
                   child: Center(child: Text("Calculate",style:fontsSize,))
               ),
