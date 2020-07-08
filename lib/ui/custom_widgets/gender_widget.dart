@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterui/constants/colors.dart';
 
-Color inactiveColor=Colors.blueGrey;
-Color activeColor=Colors.brown;
-enum Gender{
-  male,female
-}
-Color color;
 class MaleFemale extends StatefulWidget {
   final icon;
   final text;
@@ -16,7 +10,6 @@ class MaleFemale extends StatefulWidget {
 }
 
 class _MaleFemaleState extends State<MaleFemale> {
-  Gender gender;
   @override
   Widget build(BuildContext context) {
     final height=MediaQuery.of(context).size.height;

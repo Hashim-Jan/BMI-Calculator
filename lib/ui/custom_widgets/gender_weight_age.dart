@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutterui/constants/colors.dart';
 import 'package:flutterui/constants/fonts.dart';
 
-class WeightAge extends StatefulWidget {
+class GenderWeightAge extends StatefulWidget {
   String text;
   int number =0;
-  WeightAge({Key key , this.text, this.number}):super(key: key);
+  GenderWeightAge({Key key , this.text, this.number}):super(key: key);
   @override
-  _WeightAgeState createState() => _WeightAgeState();
+  _GenderWeightAgeState createState() => _GenderWeightAgeState();
 }
 
-class _WeightAgeState extends State<WeightAge> {
+class _GenderWeightAgeState extends State<GenderWeightAge> {
   int num=0;
   @override
   Widget build(BuildContext context) {
